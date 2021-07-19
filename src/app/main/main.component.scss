@@ -1,0 +1,125 @@
+@import "../../assets/abstarct/variables.scss";
+  
+.wrapper{
+    background-image: url('../../assets/images/bg.jpg');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+}
+.headerWrapper{
+    width: 100%;
+}
+.headerTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.angularLogoWrap{
+    width: 150px;
+    margin-right: 50px;
+}
+.angularLogo__img{
+    width: 100%;
+}
+.headerTitle__text{
+    color: $color-rose;
+    font-family: $font-bold;
+    font-size: 50px;
+    text-shadow: rgba(0, 0, 0, 0.322) 5px 5px 5px;
+    line-height: 1;
+}
+
+.header__sign{
+    font-family: $font-italic;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 1;
+}
+.addingToDoformWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.errors{
+    color: red;
+    font-size: 20px;
+}
+.addingToDoform{
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.425);
+}
+.taskInput{
+    width: 500px;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    color: $color-grey;
+    transition: all linear 0.5s;
+    border: none!important;
+    &:focus{
+        box-shadow: 2px 2px 25px rgba(230, 82, 134, 0.57);
+    }
+   
+}
+
+.addTaskBtn{
+    width: 100px;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    background-color: $color-rose;
+    box-shadow: 2px 2px 5px rgba(230, 82, 134, 0.473);
+    transition: all linear 2s;
+    &:hover{
+        box-shadow: 2px 2px 20px rgba(230, 120, 158, 0.59);
+    }
+}
+.error{
+    border: red solid 1px;
+    box-shadow: rgba(255, 0, 0, 0.309) 5px  5px 5px;
+}
+@media screen and (max-width: 600px){
+ .headerTitle__text{
+     font-size: 35px ;
+ }
+ .header__sign{
+     font-size: 25px;
+ }
+ .angularLogoWrap{
+     width: 100px;
+     margin-right: 10px;
+ }
+ .taskInput{
+     width: 80%;
+     font-size: 15px;
+ }   
+}
+@media screen and (max-width: 400px){
+    .headerTitle__text{
+        font-size: 30px ;
+    }
+    .header__sign{
+        font-size: 20px;
+    }
+    .angularLogoWrap{
+        width: 80px;
+        margin-right: 10px;
+    }
+    .addTaskBtn{
+        width: 60px;
+    }   
+   }
+
+// .header__sign{}

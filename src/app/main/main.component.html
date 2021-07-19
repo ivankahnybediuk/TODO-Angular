@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <div class="headerWrapper">
+        <div class="headerTitle">
+            <div class="angularLogoWrap">
+                <img class = "angularLogo__img" 
+                     src="../../assets/images/angularLogo.png" 
+                     alt="Angular">
+            </div>
+            <div class="headerTitleText">
+                <div class="headerTitle__text">
+                    TODO List
+                </div>
+                <div class="header__sign">
+                    by Ivanka
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="addingToDoformWrapper">
+        <form class="addingToDoform" action="post" [formGroup] = 'addingTaskForm' (ngSubmit)="onSubmit()">
+            <input  formControlName = 'task'
+                    type="text" 
+                   placeholder="Add you task"
+                   class="taskInput"
+                   [ngClass]='{error: errorText}'>
+            <button  class="addTaskBtn"
+                    type="submit"
+                    >TODO</button>
+        </form>
+        <div class="errors" *ngIf='errorText'>{{errorText}}</div>
+    </div>
+    <app-todo-lists 
+    [taskList] = 'allTasks'
+    (onDelete) = "onDelete($event)"
+    (onDone) = "onDone($event)"
+    (onClearDoneList) = "onClearDoneList()"
+    ></app-todo-lists>
+</div>

@@ -1,0 +1,33 @@
+
+
+    <div *ngIf='undoneList.length>0' class="list undoneList">
+        <div class="listTitle">
+            TO DO
+        </div>
+            <div class="taskItem" 
+                 *ngFor = 'let task of undoneList'
+                 (click) = "makeDone(task)"
+                 >
+                <div class="taskText taskText_undone">{{task.text}}</div>
+                <div class="taskItemBtn">
+                    <button class="makeDoneBtn" (click) = "makeDone(task)"><i class="fas fa-check-circle"></i></button>
+                    <button class="deleteBtn" (click) = "deleteTask(task)"><i class="fas fa-times-circle"></i></button>
+                </div>
+            </div>
+    </div>
+    <div *ngIf='doneList.length>0' class="list doneList">
+        <div class="listTitle">
+            DONE
+        </div>
+            <div class="taskItem"  *ngFor = 'let task of doneList'>
+                <div class="taskText taskText_done">{{task.text}}</div>
+                <div class="taskItemBtn">
+                    <button class="deleteBtn" (click) = "deleteTask(task)"><i class="fas fa-times-circle"></i></button>
+                </div>
+            </div>
+            <button class="clearDoneList"
+                    (click) = "clearDoneList()"
+            >
+                <i class="fas fa-trash-alt"></i>
+            </button>
+    </div>
